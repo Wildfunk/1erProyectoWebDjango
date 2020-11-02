@@ -1,0 +1,26 @@
+{% extends "ProyectoWebApp/base.html" %}
+{% block title %}Servicios{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for servicio in servicios %}
+                <div class="col-md-4 col-sm-6 d-flex align-items-stretch pt-2">
+                    <div class="card border border-dark" style="background: rgba(255, 252, 252, 0.03);">
+                        <img src="{{servicio.imagen.url}}" class="card-img-top img-fluid" style="width: 18rem; height: 15rem;" >
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: white;">{{servicio.titulo}}</h5>
+                            <p class="card-text" style="color: white;">{{servicio.contenido}}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+               
+            {% endfor %}
+
+        </div>
+    </div>
+        
+{% endblock %}
